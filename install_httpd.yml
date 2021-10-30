@@ -1,0 +1,19 @@
+---
+- name: sample book
+  hosts: myServers
+  become: true
+  tasks:
+    - name: install httpd
+      yum:
+          name: httpd
+          state: latest
+    - name: run httpd
+      service:
+          name: httpd
+          enabled: yes
+          state: started
+    - name: create content
+      copy:
+          content: "Congrats on installing httpd"
+          dest: /var/www/html/index.html
+
