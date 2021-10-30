@@ -1,6 +1,6 @@
 ---
 - name: sample book
-  hosts: myServers
+  hosts: localhost
   become: true
   tasks:
     - name: install httpd
